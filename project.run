@@ -1,0 +1,19 @@
+# Reset the AMPL enviroment
+reset;
+
+# Load the Model
+model project.mod;
+
+# Load the Data
+data project.dat;
+
+# Display the problem formulation 
+#expand profit, Mining_Limit, Working_Mines_Each_Year, Mixture_Quality_Each_Year, Closed1, Closed2;
+
+# Select my Solver and solve the problem
+option solver cplex;
+solve;
+
+# Results
+display profit, x, y, z;
+
